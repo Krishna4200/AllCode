@@ -1,0 +1,33 @@
+mod gildedrose;
+use gildedrose::{GildedRose, Item};
+fn main() {
+    let items = vec![
+        Item::new("Vest", 10, 20),
+        Item::new("Brie", 2, 0),
+        Item::new("Elixir", 5, 7),
+        Item::new("Sulfuras", 0, 80),
+        Item::new("Sulfuras", -1, 80),
+        Item::new("Backstage concert", 15, 20),
+        Item::new("Backstage concert", 10, 49),
+        Item::new("Backstage concert", 5, 49),
+      
+        Item::new("Cake", 3, 6),
+    ];
+    let mut rose = GildedRose::new(items);
+
+    println!("Hello");
+    for i in 0..30 {
+    for i in 0..=30 {
+        println!("-------- day {} --------", i);
+        println!("name, sellIn, quality");
+        for item in &rose.items {
+            println!("{}", item);
+        }
+        println!();
+        rose.update_quality();
+    }
+}
+
+
+
+
